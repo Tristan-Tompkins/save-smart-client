@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
+// import { Row, Col, Table } from 'react-bootstrap'
 import apiUrl from '../../apiConfig'
 
 const IndexExpenses = props => {
@@ -20,17 +20,25 @@ const IndexExpenses = props => {
   }, [])
 
   const expensesJSX = expenses.map(expense => (
-    <li key={expense._id}>
-      {expense.item}
-    </li>
+    <tr key={expense._id}>
+      <td>${expense.amount}</td>
+      <td>{expense.item}</td>
+    </tr>
   ))
 
   return (
     <div>
-      <h4>Your expenses:</h4>
-      <ul>
-        {expensesJSX}
-      </ul>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Amount</th>
+            <th scope="col">Item</th>
+          </tr>
+        </thead>
+        <tbody>
+          {expensesJSX}
+        </tbody>
+      </table>
     </div>
   )
 }
