@@ -9,6 +9,12 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import IndexExpenses from '../Expenses/IndexExpenses'
+// import EditExpense from '../Expenses/EditExpense'
+import ShowExpense from '../Expenses/ShowExpense'
+
+// <AuthenticatedRoute user={user} exact path='/expenses/:id' render={() => (
+//   <EditExpense user={user} />
+// )} />
 
 class App extends Component {
   constructor () {
@@ -57,6 +63,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/expenses' render={() => (
             <IndexExpenses user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/expenses/:id' render={(props) => (
+            <ShowExpense user={user} expenseprops={props}/>
           )} />
         </main>
       </Fragment>
