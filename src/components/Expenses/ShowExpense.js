@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react'
-// import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -9,6 +9,7 @@ import apiUrl from '../../apiConfig'
 const Expense = (props) => {
   const [expense, setExpense] = useState({ item: '', amount: '' })
   const [updated, setUpdated] = useState(false)
+  const [route, setRoute] = useState(false)
 
   useEffect(() => {
     axios({
@@ -53,12 +54,14 @@ const Expense = (props) => {
       }
     })
       .then(() => setUpdated(true))
-      .then()
+      .then(() => setRoute(true))
       .catch(console.error)
   }
-
   if (updated) {
     // add msg alert
+  }
+  if (route) {
+    return <Redirect to='/expenses' />
   }
   return (
     <div>

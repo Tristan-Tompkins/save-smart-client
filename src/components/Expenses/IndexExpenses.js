@@ -18,7 +18,7 @@ const IndexExpenses = props => {
     })
       .then(res => indexExpenses(res.data.expenses))
       .catch(console.error)
-  }, [])
+  }, [props])
 
   const expensesJSX = expenses.map(expense => (
     <tr key={expense._id} className="clickable-row">
