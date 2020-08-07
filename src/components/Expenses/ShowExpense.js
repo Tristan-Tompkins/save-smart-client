@@ -57,6 +57,7 @@ const Expense = (props) => {
       .then(() => setRoute(true))
       .catch(console.error)
   }
+
   if (updated) {
     // add msg alert
   }
