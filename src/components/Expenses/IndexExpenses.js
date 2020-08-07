@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 const IndexExpenses = (props) => {
   const [expenses, indexExpenses] = useState([])
@@ -28,6 +29,7 @@ const IndexExpenses = (props) => {
 
   return (
     <div>
+      <Button>Add an Expense</Button>
       <table className="table table-hover table-dark" size="sm">
         <thead>
           <tr>

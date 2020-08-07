@@ -5,13 +5,12 @@ import axios from 'axios'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import apiUrl from '../../apiConfig'
+import messages from '../AutoDismissAlert/messages'
 
 const Expense = (props) => {
   const [expense, setExpense] = useState({ item: '', amount: '' })
-  const [updated, setUpdated] = useState(false)
   const [route, setRoute] = useState(false)
-  const [deleted, setDeleted] = useState(false)
-
+  const { msgAlert } = props
   useEffect(() => {
     axios({
       method: 'GET',
@@ -54,9 +53,17 @@ const Expense = (props) => {
         }
       }
     })
-      .then(() => setUpdated(true))
       .then(() => setRoute(true))
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Updated',
+        message: messages.expenseUpdateSuccess,
+        variant: 'success'
+      }))
+      .catch(() => msgAlert({
+        heading: 'Failiure',
+        message: messages.expenseUpdateFailiure,
+        variant: 'danger'
+      }))
   }
   const deleteExpense = (expense) => {
     axios({
@@ -67,15 +74,18 @@ const Expense = (props) => {
       }
     })
       .then(() => props.expenseprops.history.push('/expenses'))
-      .then(() => setDeleted(true))
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Deleted',
+        message: messages.expenseDeleteSuccess,
+        variant: 'success'
+      }))
+      .catch(() => msgAlert({
+        heading: 'Failiure',
+        message: messages.expenseDeleteFailiure,
+        variant: 'danger'
+      }))
   }
-  if (deleted) {
-    // add msgAlert for succesful delete
-  }
-  if (updated) {
-    // add msg alert
-  }
+
   if (route) {
     return <Redirect to='/expenses' />
   }
