@@ -59,7 +59,6 @@ const Expense = (props) => {
       .catch(console.error)
   }
   const deleteExpense = (expense) => {
-    console.log(expense)
     axios({
       method: 'DELETE',
       url: `${apiUrl}/expenses/` + props.expenseprops.match.params.id,
@@ -67,6 +66,7 @@ const Expense = (props) => {
         'Authorization': `Bearer ${props.user.token}`
       }
     })
+      .then(() => props.expenseprops.history.push('/expenses'))
       .then(() => setDeleted(true))
       .catch(console.error)
   }
