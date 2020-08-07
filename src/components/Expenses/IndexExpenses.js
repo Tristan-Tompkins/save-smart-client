@@ -10,7 +10,7 @@ const IndexExpenses = props => {
   useEffect(() => {
     console.log(props)
     axios({
-      method: 'get',
+      method: 'GET',
       url: `${apiUrl}/expenses`,
       headers: {
         'Authorization': `Bearer ${props.user.token}`
