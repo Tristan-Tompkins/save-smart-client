@@ -56,11 +56,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/expenses' render={() => (
-            <IndexExpenses user={user} />
+          <AuthenticatedRoute user={user} path='/expenses' render={(expenseprops) => (
+            <IndexExpenses user={user} expenseprops={expenseprops}/>
           )} />
-          <AuthenticatedRoute user={user} path='/expenses/:id' render={(props) => (
-            <ShowExpense user={user} expenseprops={props}/>
+          <AuthenticatedRoute user={user} path='/expenses/:id' render={(expenseprops) => (
+            <ShowExpense user={user} expenseprops={expenseprops}/>
           )} />
         </main>
       </Fragment>
