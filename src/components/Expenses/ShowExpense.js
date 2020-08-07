@@ -10,6 +10,7 @@ const Expense = (props) => {
   const [expense, setExpense] = useState({ item: '', amount: '' })
   const [updated, setUpdated] = useState(false)
   const [route, setRoute] = useState(false)
+  const [deleted, setDeleted] = useState(false)
 
   useEffect(() => {
     axios({
@@ -57,7 +58,21 @@ const Expense = (props) => {
       .then(() => setRoute(true))
       .catch(console.error)
   }
-
+  const deleteExpense = (expense) => {
+    console.log(expense)
+    axios({
+      method: 'DELETE',
+      url: `${apiUrl}/expenses/` + props.expenseprops.match.params.id,
+      headers: {
+        'Authorization': `Bearer ${props.user.token}`
+      }
+    })
+      .then(() => setDeleted(true))
+      .catch(console.error)
+  }
+  if (deleted) {
+    // add msgAlert for succesful delete
+  }
   if (updated) {
     // add msg alert
   }
@@ -78,6 +93,8 @@ const Expense = (props) => {
         </Form.Group>
         <Button className="updateExpense" variant="primary" type="submit">Update</Button>
       </Form>
+      <Button onClick={(expense) => { deleteExpense(expense) }}>🗑️</Button>
+
     </div>
   )
 }
