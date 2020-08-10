@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
@@ -34,7 +33,6 @@ const Expense = (props) => {
   const handleChange = event => {
     const updatedField = { [event.target.name]: event.target.value }
     const editedExpense = Object.assign({}, expense, updatedField)
-    console.log('edited expense:', editedExpense)
     setExpense(editedExpense)
   }
 

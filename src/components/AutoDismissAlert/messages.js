@@ -9,5 +9,7 @@ export default {
   expenseDeleteSuccess: 'Expense successfully deleted.',
   expenseDeleteFailiure: 'Failed to delete expense.',
   expenseUpdateSuccess: 'Expense successfully updated.',
-  expenseUpdateFailiure: 'Failed to update Expense.'
+  expenseUpdateFailiure: 'Failed to update Expense.',
+  expenseCreateSuccess: 'Expense successfully created.',
+  expenseCreateFailiure: 'Failed to create Expense.'
 }

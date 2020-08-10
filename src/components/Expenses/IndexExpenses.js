@@ -29,7 +29,7 @@ const IndexExpenses = (props) => {
 
   return (
     <div>
-      <Button>Add an Expense</Button>
+      <Button><Link to='/expenses/create'>Add an Expense</Link></Button>
       <table className="table table-hover table-dark" size="sm">
         <thead>
           <tr>
