@@ -11,6 +11,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import IndexExpenses from '../Expenses/IndexExpenses'
 import ShowExpense from '../Expenses/ShowExpense'
 import CreateExpense from '../Expenses/CreateExpense'
+import GraphExpenses from '../Expenses/GraphExpenses'
 
 class App extends Component {
   constructor () {
@@ -60,11 +61,14 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/expenses' render={(expenseprops) => (
             <IndexExpenses msgAlert={this.msgAlert} user={user} expenseprops={expenseprops}/>
           )} />
-          <AuthenticatedRoute user={user} path='/expenses/create' render={(expenseprops) => (
+          <AuthenticatedRoute user={user} exact path='/expenses/create' render={(expenseprops) => (
             <CreateExpense msgAlert={this.msgAlert} user={user} expenseprops={expenseprops}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/expenses/:id' render={(expenseprops) => (
             <ShowExpense msgAlert={this.msgAlert} user={user} expenseprops={expenseprops}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/expenses/graph' render={(expenseprops) => (
+            <GraphExpenses msgAlert={this.msgAlert} user={user} expenseprops={expenseprops}/>
           )} />
         </main>
       </Fragment>

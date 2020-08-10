@@ -90,7 +90,7 @@ const Expense = (props) => {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <h3>Show up</h3>
+        <h3>Edit an expense:</h3>
         <Form.Group controlId="item">
           <Form.Label>Item</Form.Label>
           <Form.Control required type="item" name="item" value={expense.item} placeholder={expense.item} onChange={handleChange} />

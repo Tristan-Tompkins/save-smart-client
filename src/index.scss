@@ -1,1 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
+
+.table {
+  text-align: center;
+  font-size: 20px;
+}
+
+.editColumn {
+  width: 6px;
+}
+
+.itemColumn {
+  width: 30px;
+}
+
+.amountColumn {
+  width: 20px;
+}
