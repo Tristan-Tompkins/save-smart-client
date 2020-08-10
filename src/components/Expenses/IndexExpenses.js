@@ -20,23 +20,31 @@ const IndexExpenses = (props) => {
       .catch(console.error)
   }, [props])
 
-  const labels = []
-  const data = []
   const indexItem = expenses.map(expense => {
-    labels.push(`${expense.item}`)
-    return labels
+    return expense.item
   })
   const indexAmount = expenses.map(expense => {
-    data.push(Number(`${expense.amount}`))
-    return data
+    return expense.amount
   })
-  console.log(data)
-  console.log(labels)
   const index = {
     labels: indexItem,
     datasets: [
       {
         label: 'Expenses',
+        backgroundColor: [
+          '#B21F00',
+          '#C9DE00',
+          '#2FDE00',
+          '#FC32CE',
+          '#00A6B4',
+          '#6800B4',
+          '#FB0417',
+          '#A963F9',
+          '#FAB221',
+          '#24BCF5'
+        ],
+        hoverBackgroundColor: ['#501800', '#4B5000', '#175000', '#7C1D67', '#003350', '#35014F', '#87050F', '#4E04A3', '#C48507', '#135C78'
+        ],
         data: indexAmount
       }
     ]
