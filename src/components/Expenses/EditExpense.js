@@ -29,7 +29,7 @@ const EditExpense = (props) => {
       .catch(error => {
         console.log(error)
       })
-  }, [props])
+  }, [])
 
   if (!expense) {
     return <p>Loading...</p>
@@ -90,7 +90,7 @@ const EditExpense = (props) => {
   }
 
   return (
-    <Fragment className='editExpense'>
+    <Fragment>
       <tr className="clickable-row">
         <td><Button type="button" className="btn btn-dark" onClick={handleShowEdit}>✏️</Button></td>
         <td>${expense.amount}</td>

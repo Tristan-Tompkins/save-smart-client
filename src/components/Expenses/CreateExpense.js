@@ -38,6 +38,7 @@ const CreateExepnse = (props) => {
         variant: 'success'
       }))
       .then(() => props.handleClose())
+      .then(() => createExepnse({ item: '', amount: '' }))
       .catch(() => msgAlert({
         heading: 'Failiure',
         message: messages.expenseCreateFailiure,
