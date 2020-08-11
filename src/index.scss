@@ -1,5 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+// styling for everything
+* {
+  color: white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
 
+.graph {
+  color: white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+// table styling
 .table {
   text-align: center;
   font-size: 20px;

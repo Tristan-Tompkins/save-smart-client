@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Link } from 'react-router-dom'
-import Button from 'react-bootstrap/Button'
+import { Button, Modal } from 'react-bootstrap'
 import { Doughnut } from 'react-chartjs-2'
 
 const IndexExpenses = (props) => {
@@ -31,6 +31,7 @@ const IndexExpenses = (props) => {
     datasets: [
       {
         label: 'Expenses',
+        color: 'white',
         backgroundColor: [
           '#B21F00',
           '#C9DE00',
@@ -60,17 +61,19 @@ const IndexExpenses = (props) => {
   return (
     <div>
       <div>
-        <Doughnut
+        <Doughnut className='graph'
           data={index}
           options={{
             title: {
               display: true,
               text: 'Expenses',
-              fontSize: 20
+              fontSize: 20,
+              color: 'white'
             },
             legend: {
               display: true,
-              position: 'right'
+              position: 'right',
+              color: 'white'
             }
           }}
         />
