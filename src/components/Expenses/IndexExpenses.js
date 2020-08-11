@@ -4,9 +4,15 @@ import apiUrl from '../../apiConfig'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { Doughnut } from 'react-chartjs-2'
+import CreateExpense from './CreateExpense'
 
 const IndexExpenses = (props) => {
   const [expenses, indexExpenses] = useState([])
+  const [show, setShow] = useState(false)
+
+  // modal show and click:
+  const handleShow = () => setShow(true)
+  const handleClose = () => setShow(false)
 
   useEffect(() => {
     axios({
@@ -28,6 +34,7 @@ const IndexExpenses = (props) => {
   })
   const index = {
     labels: indexItem,
+    fontSize: 40,
     datasets: [
       {
         label: 'Expenses',
@@ -60,25 +67,8 @@ const IndexExpenses = (props) => {
 
   return (
     <div>
-      <div className='graphExpense'>
-        <Doughnut
-          data={index}
-          options={{
-            title: {
-              display: true,
-              text: 'Expenses',
-              fontSize: 20,
-              color: 'white'
-            },
-            legend: {
-              display: true,
-              position: 'right',
-              color: 'white'
-            }
-          }}
-        />
-      </div>
-      <Link to='/expenses/create'><Button type="button" className="btn btn-dark">➕ Add an Expense</Button></Link>
+      <Button type="button" className="btn btn-dark" onClick={handleShow}>➕ Add an Expense</Button>
+      <CreateExpense show={show} handleClose={handleClose} handleShow={handleShow} msgAlert={props.msgAlert} user={props.user} expenseprops={props.expenseprops}/>
       <table className="table table-hover table-dark" size="sm">
         <thead>
           <tr>
@@ -91,6 +81,23 @@ const IndexExpenses = (props) => {
           {expensesJSX}
         </tbody>
       </table>
+      <div className='graphExpense'>
+        <Doughnut
+          data={index}
+          options={{
+            title: {
+              display: true,
+              fontSize: 50,
+              color: 'white'
+            },
+            legend: {
+              display: true,
+              position: 'right',
+              color: 'white'
+            }
+          }}
+        />
+      </div>
     </div>
   )
 }
