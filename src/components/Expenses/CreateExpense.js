@@ -10,7 +10,6 @@ import messages from '../AutoDismissAlert/messages'
 const CreateExepnse = (props) => {
   const [expense, createExepnse] = useState({ item: '', amount: '' })
   const { msgAlert } = props
-  // const [route, setRoute] = useState(false)
 
   // modal show:
   // const [show, setShow] = useState(false)
@@ -45,16 +44,12 @@ const CreateExepnse = (props) => {
         variant: 'success'
       }))
       .then(() => props.handleClose())
-      // .then(() => setRoute(true))
       .catch(() => msgAlert({
         heading: 'Failiure',
         message: messages.expenseCreateFailiure,
         variant: 'danger'
       }))
   }
-  // if (route) {
-  //   return <Redirect to='/expenses' />
-  // }
 
   return (
     <div className='createExepnse'>

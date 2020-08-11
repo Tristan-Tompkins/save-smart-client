@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { Doughnut } from 'react-chartjs-2'
 import CreateExpense from './CreateExpense'
+import EditExpense from './EditExpense'
 
 const IndexExpenses = (props) => {
   const [expenses, indexExpenses] = useState([])
   const [show, setShow] = useState(false)
 
-  // modal show and click:
+  // modal show and click for create:
   const handleShow = () => setShow(true)
   const handleClose = () => setShow(false)
 
@@ -57,14 +57,6 @@ const IndexExpenses = (props) => {
       }
     ]
   }
-  const expensesJSX = expenses.map(expense => (
-    <tr key={expense._id} className="clickable-row">
-      <td><Link to={`/expenses/${expense._id}`}>✏️</Link></td>
-      <td>${expense.amount}</td>
-      <td>{expense.item}</td>
-    </tr>
-  ))
-
   return (
     <div>
       <Button type="button" className="btn btn-dark" onClick={handleShow}>➕ Add an Expense</Button>
@@ -78,7 +70,10 @@ const IndexExpenses = (props) => {
           </tr>
         </thead>
         <tbody>
-          {expensesJSX}
+          {expenses.map(expense => (
+            <EditExpense msgAlert={props.msgAlert} user={props.user} expense={expense} key={expense._id}/>
+          )
+          )}
         </tbody>
       </table>
       <div className='graphExpense'>

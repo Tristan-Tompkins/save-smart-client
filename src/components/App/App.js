@@ -9,8 +9,7 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import IndexExpenses from '../Expenses/IndexExpenses'
-import ShowExpense from '../Expenses/ShowExpense'
-import CreateExpense from '../Expenses/CreateExpense'
+// import EditExpense from '../Expenses/EditExpense'
 import HomePage from '../Home/HomePage'
 
 class App extends Component {
@@ -64,12 +63,6 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/expenses' render={(expenseprops) => (
             <IndexExpenses msgAlert={this.msgAlert} user={user} expenseprops={expenseprops}/>
-          )} />
-          <AuthenticatedRoute user={user} exact path='/expenses/:id' render={(expenseprops) => (
-            <ShowExpense msgAlert={this.msgAlert} user={user} expenseprops={expenseprops}/>
-          )} />
-          <AuthenticatedRoute user={user} exact path='/expenses/create' render={(expenseprops) => (
-            <CreateExpense msgAlert={this.msgAlert} user={user} expenseprops={expenseprops}/>
           )} />
         </main>
       </Fragment>
