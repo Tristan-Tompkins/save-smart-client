@@ -10,6 +10,7 @@ const EditExpense = (props) => {
   const [expense, setExpense] = useState({ item: '', amount: '' })
   const { msgAlert } = props
   const [showEdit, setShowEdit] = useState(false)
+
   // modal show and click for edit:
   const handleShowEdit = () => setShowEdit(true)
   const handleCloseEdit = () => setShowEdit(false)
@@ -101,7 +102,6 @@ const EditExpense = (props) => {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
-            <h3>Edit an expense:</h3>
             <Form.Group controlId="item">
               <Form.Label>Item</Form.Label>
               <Form.Control required type="item" name="item" value={expense.item} placeholder={expense.item} onChange={handleChange} />
@@ -110,9 +110,9 @@ const EditExpense = (props) => {
               <Form.Label>Amount</Form.Label>
               <Form.Control required type="amount" name="amount" value={expense.amount} placeholder={expense.amount} onChange={handleChange} />
             </Form.Group>
-            <Button className="updateExpense" variant="primary" type="submit">Update</Button>
+            <Button className="updateExpense btn btn-dark" variant="primary" type="submit">Update</Button>
           </Form>
-          <Button onClick={(expense) => { deleteExpense(expense) }}>🗑️</Button>
+          <Button className="btn btn-dark" onClick={(expense) => { deleteExpense(expense) }}>🗑️</Button>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseEdit}>

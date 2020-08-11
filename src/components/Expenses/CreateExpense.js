@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -10,11 +9,6 @@ import messages from '../AutoDismissAlert/messages'
 const CreateExepnse = (props) => {
   const [expense, createExepnse] = useState({ item: '', amount: '' })
   const { msgAlert } = props
-
-  // modal show:
-  // const [show, setShow] = useState(false)
-  // const handleClose = () => setShow(false)
-  // const handleShow = () => setShow(true)
 
   const handleChange = event => {
     const updatedField = { [event.target.name]: event.target.value }
@@ -55,11 +49,10 @@ const CreateExepnse = (props) => {
     <div className='createExepnse'>
       <Modal show={props.show} onHide={props.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Expense</Modal.Title>
+          <Modal.Title>Add Expense:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
-            <h3>Create a new Expense:</h3>
             <Form.Group controlId="item">
               <Form.Label>Item</Form.Label>
               <Form.Control required type="item" name="item" value={expense.item} placeholder='Enter the item name' onChange={handleChange} />

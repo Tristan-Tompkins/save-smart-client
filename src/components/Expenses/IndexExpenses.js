@@ -59,23 +59,6 @@ const IndexExpenses = (props) => {
   }
   return (
     <div>
-      <Button type="button" className="btn btn-dark" onClick={handleShow}>➕ Add an Expense</Button>
-      <CreateExpense show={show} handleClose={handleClose} handleShow={handleShow} msgAlert={props.msgAlert} user={props.user} expenseprops={props.expenseprops}/>
-      <table className="table table-hover table-dark" size="sm">
-        <thead>
-          <tr>
-            <th className="editColumn" scope="col">Edit</th>
-            <th className="itemColumn" scope="col">Amount</th>
-            <th className="amountColumn" scope="col">Item</th>
-          </tr>
-        </thead>
-        <tbody>
-          {expenses.map(expense => (
-            <EditExpense msgAlert={props.msgAlert} user={props.user} expense={expense} key={expense._id}/>
-          )
-          )}
-        </tbody>
-      </table>
       <div className='graphExpense'>
         <Doughnut
           data={index}
@@ -93,6 +76,23 @@ const IndexExpenses = (props) => {
           }}
         />
       </div>
+      <Button type="button" className="btn btn-dark" onClick={handleShow}>➕ Add an Expense</Button>
+      <CreateExpense show={show} handleClose={handleClose} handleShow={handleShow} msgAlert={props.msgAlert} user={props.user} expenseprops={props.expenseprops}/>
+      <table className="table table-hover table-dark" size="sm">
+        <thead>
+          <tr>
+            <th className="editColumn" scope="col">Edit</th>
+            <th className="itemColumn" scope="col">Amount</th>
+            <th className="amountColumn" scope="col">Item</th>
+          </tr>
+        </thead>
+        <tbody>
+          {expenses.map(expense => (
+            <EditExpense msgAlert={props.msgAlert} user={props.user} expense={expense} key={expense._id}/>
+          )
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }
