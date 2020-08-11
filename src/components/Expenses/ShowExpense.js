@@ -88,7 +88,7 @@ const Expense = (props) => {
     return <Redirect to='/expenses' />
   }
   return (
-    <div>
+    <div className='indexExpenses'>
       <Form onSubmit={handleSubmit}>
         <h3>Edit an expense:</h3>
         <Form.Group controlId="item">

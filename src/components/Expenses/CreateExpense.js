@@ -49,7 +49,7 @@ const CreateExepnse = (props) => {
     return <Redirect to='/expenses' />
   }
   return (
-    <div>
+    <div className='createExepnse'>
       <Form onSubmit={handleSubmit}>
         <h3>Create a new Expense:</h3>
         <Form.Group controlId="item">

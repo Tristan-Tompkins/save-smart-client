@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Link } from 'react-router-dom'
-import { Button, Modal } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { Doughnut } from 'react-chartjs-2'
 
 const IndexExpenses = (props) => {
@@ -60,8 +60,8 @@ const IndexExpenses = (props) => {
 
   return (
     <div>
-      <div>
-        <Doughnut className='graph'
+      <div className='graphExpense'>
+        <Doughnut
           data={index}
           options={{
             title: {
