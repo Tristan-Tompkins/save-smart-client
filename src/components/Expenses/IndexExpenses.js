@@ -38,7 +38,6 @@ const IndexExpenses = (props) => {
     datasets: [
       {
         label: 'Expenses',
-        color: 'white',
         backgroundColor: [
           '#B21F00',
           '#C9DE00',
@@ -65,13 +64,11 @@ const IndexExpenses = (props) => {
           options={{
             title: {
               display: true,
-              fontSize: 50,
-              color: 'white'
+              fontSize: 50
             },
             legend: {
               display: true,
-              position: 'right',
-              color: 'white'
+              position: 'right'
             }
           }}
         />

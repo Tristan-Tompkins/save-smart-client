@@ -45,7 +45,6 @@ class App extends Component {
           />
         ))}
         <main className="container">
-          <style>{'body { background-color: black; }'}</style>
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
