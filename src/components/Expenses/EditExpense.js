@@ -110,7 +110,7 @@ const EditExpense = (props) => {
               <Form.Label>Amount</Form.Label>
               <Form.Control required type="amount" name="amount" value={expense.amount} placeholder={expense.amount} onChange={handleChange} />
             </Form.Group>
-            <Button className="updateExpense btn btn-dark" variant="primary" type="submit">Update</Button>
+            <Button className="updateExpense btn btn-dark" variant="dark" type="submit">Update</Button>
           </Form>
           <Button className="btn btn-dark" onClick={(expense) => { deleteExpense(expense) }}>🗑️</Button>
         </Modal.Body>

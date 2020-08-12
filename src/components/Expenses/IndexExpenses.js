@@ -58,6 +58,7 @@ const IndexExpenses = (props) => {
   }
   return (
     <div>
+      <h1 className='title'>Expense Dashboard</h1>
       <div className='graphExpense'>
         <Doughnut
           data={index}
@@ -73,7 +74,7 @@ const IndexExpenses = (props) => {
           }}
         />
       </div>
-      <Button type="button" className="btn btn-dark" onClick={handleShow}>➕ Add an Expense</Button>
+      <Button type="button" className="addExpense btn btn-dark" onClick={handleShow}>➕ Add an Expense</Button>
       <CreateExpense show={show} handleClose={handleClose} handleShow={handleShow} msgAlert={props.msgAlert} user={props.user} expenseprops={props.expenseprops}/>
       <table className="table table-hover table-dark" size="sm">
         <thead>

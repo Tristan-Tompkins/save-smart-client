@@ -62,7 +62,7 @@ const CreateExepnse = (props) => {
               <Form.Label>Amount</Form.Label>
               <Form.Control required type="amount" name="amount" value={expense.amount} placeholder='Enter the amount' onChange={handleChange} />
             </Form.Group>
-            <Button className="createExpense" variant="primary" type="submit">Create</Button>
+            <Button className="createExpense" variant="dark" type="submit">Create</Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
