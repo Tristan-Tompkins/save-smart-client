@@ -2,9 +2,9 @@
 Smart Save is a one stop shop for organizing all your budgeting needs. This application is is designed to help you visualize your spending, and get a better understanding of where your dollar is going.
 
 ## Links
-- Client Application: ![Client App](https://kailcro.github.io/save-smart-client/)
-- API ![API](https://git.heroku.com/stark-dawn-63091.git)
-- Back-End Repository: ![Back-end Repo](https://github.com/kailcro/save-smart-server)
+- Client Application: <https://kailcro.github.io/save-smart-client/>
+- API <https://git.heroku.com/stark-dawn-63091.git>
+- Back-End Repository: <https://github.com/kailcro/save-smart-server>
 
 ## Technologies Used
 #### Front-End:
