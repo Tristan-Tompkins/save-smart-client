@@ -1,5 +1,5 @@
 # Save Smart | Personal Budget Calculator
-Smart Save is a one stop shop for organizing all your budgeting needs. This application is is designed to help you visualize your spending, and get a better understanding of where your dollar is going.
+Save Smart is a one stop shop for organizing all your budgeting needs. This application is is designed to help you visualize your spending, and get a better understanding of where your dollar is going.
 
 ## Links
 - Client Application: <https://kailcro.github.io/save-smart-client/>
