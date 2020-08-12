@@ -19,7 +19,7 @@ Smart Save is a one stop shop for organizing all your budgeting needs. This appl
 - Mongoose
 
 ## Preview
-
+![Preview](https://i.imgur.com/xv20G4I.png)
 ## Planning
 
 ## Wireframe
